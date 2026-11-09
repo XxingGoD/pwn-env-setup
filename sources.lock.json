@@ -1,0 +1,49 @@
+{
+  "sources": {
+    "uv-installer": {"url":"https://astral.sh/uv/0.13.6/install.sh","version":"0.13.6","sha256":"f7a56e7afaec49a3bcbc3ac3cdbe917e7c6ce30e0d815308a12e531aa5ef23b7"},
+    "pwndbg": {"url":"https://github.com/pwndbg/pwndbg/releases/download/2026.10.28/pwndbg_2026.10.28_x86_64-portable.tar.xz","version":"2026.10.28","sha256":"17049a23ba8cbcf4780c4bc9b4aeb519f2801ceabe7304b55d3d622acca03b8c"},
+    "sasquatch": {"url":"https://codeload.github.com/onekey-sec/sasquatch/tar.gz/refs/tags/sasquatch-v4.5.1-6","ref":"sasquatch-v4.5.1-6","commit":"15573bf46c671c8ed23e8c0c50e6187e0c8d0b62","sha256":"57f2b90852d1d43a90f0a228337dc66642da4842494b84ba1896f34765edfc47"},
+    "libc-database": {"url":"https://codeload.github.com/niklasb/libc-database/tar.gz/7dd77047221f3e2f014d3d55d6575bd684477ea9","ref":"7dd77047221f3e2f014d3d55d6575bd684477ea9","commit":"7dd77047221f3e2f014d3d55d6575bd684477ea9","sha256":"8d733ee720c580abce4524d9859d5d39f90275231b1a4d962f1ea28e4b699d36"},
+    "radare2": {
+      "url":"https://codeload.github.com/radareorg/radare2/tar.gz/refs/tags/6.0.4",
+      "ref":"6.0.4",
+      "commit":"54b6f9b5056fd8e0ce7a5fc3651fc2abf1960194",
+      "sha256":"2aadf26066c396961949656f304cb5d99b76c88adbe30ad923db4e98b10f3bbc",
+      "subprojects": {
+        "sdb": {
+          "url":"https://codeload.github.com/radareorg/sdb/tar.gz/refs/tags/2.2.0",
+          "ref":"2.2.0",
+          "commit":"a40343ded21d4978b665aa14c913d0b87feb734f",
+          "directory":"sdb",
+          "sha256":"05b6fda41727e2d634bc0cdea0bccdc186b48cc9136b2367ab2a7358145fa8b4"
+        },
+        "qjs": {
+          "url":"https://codeload.github.com/quickjs-ng/quickjs/tar.gz/7238ee64dbc2fbdea044555cda8cda78785a93ed",
+          "ref":"7238ee64dbc2fbdea044555cda8cda78785a93ed",
+          "commit":"7238ee64dbc2fbdea044555cda8cda78785a93ed",
+          "directory":"qjs",
+          "packagefiles":"qjs",
+          "sha256":"7c1adc7aa7b1ab0a7f0b0a9aaa24fd3c7a0691d8a6ba8cae886f29834f1bee02"
+        },
+        "capstone-v5": {
+          "url":"https://codeload.github.com/capstone-engine/capstone/tar.gz/cd6dd7b75d126a855be1f9f76570ee5a850c6061",
+          "ref":"cd6dd7b75d126a855be1f9f76570ee5a850c6061",
+          "commit":"cd6dd7b75d126a855be1f9f76570ee5a850c6061",
+          "directory":"capstone-v5",
+          "packagefiles":"capstone-v5",
+          "patches":["capstone-patches/fix-x86-16.patch"],
+          "sha256":"ac1ef9c6b60059adc382a82cb7bec614be74c46517a6280fe06ec0f7e81678d5"
+        }
+      }
+    },
+    "ceccomp": {"url":"https://deb.debian.org/debian/pool/main/c/ceccomp/ceccomp_4.3.1.orig.tar.gz","version":"4.3.1","sha256":"1d998f2a539795c2f20c85acbbe9db10159bee45289f68809f0637f2c506a7cb"},
+    "kernel-hardening-checker": {"url":"https://codeload.github.com/a13xp0p0v/kernel-hardening-checker/tar.gz/b2acfd4f8fba4e91996224b29c992cf83be30904","commit":"b2acfd4f8fba4e91996224b29c992cf83be30904","sha256":"90f9f8b74247607651f2a501e914f594567f269255b5048e92effa9b7b4ff3c1"},
+    "vmlinux-to-elf": {"url":"https://codeload.github.com/marin-m/vmlinux-to-elf/tar.gz/8dc277f28c62d2db10fbe36bb539ff973f045443","commit":"8dc277f28c62d2db10fbe36bb539ff973f045443","sha256":"70ba450f215a4360bbdc6a5adcb56385e033ead46cf27e38b8eb29fd77b0226d"},
+    "elftools": {"url":"https://rubygems.org/gems/elftools-1.1.3.gem","version":"1.1.3","sha256":"d17c7483c221397fbae144c82d905b739152c0281f51df7dda4e8faf89e4265d"},
+    "bindata": {"url":"https://rubygems.org/gems/bindata-2.4.15.gem","version":"2.4.15","sha256":"e567e4278223e041caf4e623de870b2df8a93479d8f13e2b478bad45e0fbc413"},
+    "os-gem": {"url":"https://rubygems.org/gems/os-1.1.4.gem","version":"1.1.4","sha256":"57816d6a334e7bd6aed048f4b0308226c5fb027433b67d90a9ab435f35108d3f"},
+    "racc": {"url":"https://rubygems.org/gems/racc-1.8.1.gem","version":"1.8.1","sha256":"4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f"},
+    "one-gadget": {"url":"https://rubygems.org/gems/one_gadget-1.9.0.gem","version":"1.9.0","sha256":"bc9ec8a6276a6e7ff45d15a4482f84c21f7586477b6827302c552691203a24c9"},
+    "seccomp-tools": {"url":"https://rubygems.org/gems/seccomp-tools-1.6.0.gem","version":"1.6.0","sha256":"d8ac85a3e3e0ab51c87375d611755a26c4be80699390c32be4afa06d295b7449"}
+  }
+}

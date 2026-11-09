@@ -1,0 +1,30 @@
+name: verify
+on: [push, pull_request]
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: astral-sh/setup-uv@v6
+      - run: uv lock --check --project python
+      - run: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -v
+      - run: for p in ubuntu22.04 ubuntu24.04 arch; do HOME="$(mktemp -d)" bash install.sh --all --dry-run --platform "$p" --prefix /tmp/pwn-env-plan >"/tmp/$p-plan"; done
+  installation:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - image: ubuntu:22.04
+            platform: ubuntu22.04
+          - image: ubuntu:24.04
+            platform: ubuntu24.04
+          - image: archlinux:base-devel
+            platform: arch
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install and exercise real tools as ordinary user
+        run: docker run --rm -v "$PWD:/src:ro" '${{ matrix.image }}' bash /src/tests/container-install.sh '${{ matrix.platform }}'

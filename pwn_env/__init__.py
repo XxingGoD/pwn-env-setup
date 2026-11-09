@@ -1,0 +1,1 @@
+"""Standalone PWN tools installer."""

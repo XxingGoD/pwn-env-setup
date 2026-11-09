@@ -1,0 +1,25 @@
+[project]
+name = "pwn-env-tools"
+version = "0.1.0"
+requires-python = ">=3.12,<3.13"
+dependencies = []
+
+[project.optional-dependencies]
+pwntools = ["pwntools==4.15.0", "capstone==5.0.6", "unicorn==2.1.2"]
+angr = ["angr==9.2.222", "unicorn==2.1.2", "bitstring<4", "pycparser==3.0"]
+boofuzz = ["boofuzz==0.4.2"]
+ropgadget = ["ROPgadget==7.7"]
+ropper = ["ropper==1.13.13"]
+pyelftools = ["pyelftools==0.33"]
+capstone = ["capstone==5.0.6"]
+unicorn = ["unicorn==2.1.2"]
+keystone-engine = ["keystone-engine==0.9.2"]
+z3-solver = ["z3-solver==4.13.0.0"]
+unblob = ["unblob==26.6.4"]
+uefi-firmware = ["uefi-firmware==1.11"]
+kernel-hardening-checker = ["kernel-hardening-checker @ git+https://github.com/a13xp0p0v/kernel-hardening-checker@b2acfd4f8fba4e91996224b29c992cf83be30904"]
+vmlinux-to-elf = ["vmlinux-to-elf @ git+https://github.com/marin-m/vmlinux-to-elf@8dc277f28c62d2db10fbe36bb539ff973f045443"]
+
+[tool.uv]
+package = false
+conflicts = [[{ extra = "angr" }, { extra = "unblob" }]]
